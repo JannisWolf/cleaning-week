@@ -12,12 +12,12 @@
             const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
             const daysSinceStart = Math.floor((currentDate - startOfYear) / (1000 * 60 * 60 * 24));
             const weekNumber = Math.floor(daysSinceStart / 7) + 1;
-            const offset = 4; // Adjust so that today falls into Cleaning Week 1
+            const offset = 5; // Adjust so that today falls into Cleaning Week 1
             return ((weekNumber + offset) % 5) + 1; 
         }
 
         document.getElementById("message").innerText = 
-            `Querido y estimado compañero de piso, esta semana es la semana de la limpieza ${getCleaningWeek()} xx.`;
+            `Querido y estimado compañero de piso, esta semana es la semana de la limpieza ${getCleaningWeek()}. Hasta la próxima semana! ;)`;
     </script>
 </body>
 </html>
