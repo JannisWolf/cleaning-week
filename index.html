@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>Cleaning Week</title>
+    <style>
+        .red-bold {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1 id="message"></h1>
@@ -12,12 +18,12 @@
             const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
             const daysSinceStart = Math.floor((currentDate - startOfYear) / (1000 * 60 * 60 * 24));
             const weekNumber = Math.floor(daysSinceStart / 7) + 1;
-            const offset = 4; // Adjust so that today falls into Cleaning Week 1
+            const offset = 4; // Adjust this number if needed
             return ((weekNumber + offset) % 5) + 1; 
         }
 
-        document.getElementById("message").innerText = 
-            `Querido y estimado compañero de piso, esta semana es la semana de la limpieza ${getCleaningWeek()}. Hasta la próxima semana! ;)`;
+        document.getElementById("message").innerHTML = 
+            `Querido/a y estimado/a compañer@ de piso, esta semana es la semana de la limpieza <span class="red-bold">${getCleaningWeek()}</span> xx.`;
     </script>
 </body>
 </html>
